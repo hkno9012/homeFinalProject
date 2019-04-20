@@ -43,8 +43,8 @@ public class GamePanel extends JPanel
 		this.enemySprite = new ImageIcon(getClass().getResource
 				("/fin/view/images/smallCreateEnemyWarrior.png"));
 		
-		playerHP = new JTextField("Player: " /*+ app.getPlayerHealth()*/);
-		enemyHP = new JTextField("Enemy: " /*+ app.getEnemyHealth()*/);
+		playerHP = new JTextField("Player: " + 15);
+		enemyHP = new JTextField("Enemy: " + 15);
 		
 		playerLabel = new JLabel("Player", playerSprite, JLabel.CENTER);
 		enemyLabel = new JLabel("Enemy", enemySprite, JLabel.CENTER);
@@ -154,8 +154,8 @@ public class GamePanel extends JPanel
 	public void updateHPFields(int index)
 	{
 		String [] hpData = app.getCharacterHP(index);
-		playerHP.setText(hpData[0]);
-		enemyHP.setText(hpData[1]);
+		playerHP.setText("Player: " + hpData[0]);
+		enemyHP.setText("Enemy: " + hpData[1]);
 	}
 	
 	public void loadSprites(int playerNum, int enemyNum)
