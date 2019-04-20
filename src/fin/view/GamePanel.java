@@ -124,7 +124,7 @@ public class GamePanel extends JPanel
 				app.enemyFight();
 				updateHPFields(0);
 				attackCount += 1;
-				if(attackCount > 3)
+				if(attackCount > 2)
 				{
 					winLabel.setVisible(true);
 				}
