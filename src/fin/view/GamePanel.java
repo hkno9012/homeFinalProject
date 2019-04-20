@@ -39,12 +39,12 @@ public class GamePanel extends JPanel
 		this.panelLayout = new SpringLayout();
 		
 		this.playerSprite = new ImageIcon(getClass().getResource
-				("/create/view/images/smallCreatePlayerWarrior.png"));
+				("/fin/view/images/smallCreatePlayerWarrior.png"));
 		this.enemySprite = new ImageIcon(getClass().getResource
-				("/create/view/images/smallCreateEnemyWarrior.png"));
+				("/fin/view/images/smallCreateEnemyWarrior.png"));
 		
-		playerHP = new JTextField("Player: " + app.getPlayerHealth());
-		enemyHP = new JTextField("Enemy: " + app.getEnemyHealth());
+		playerHP = new JTextField("Player: " /*+ app.getPlayerHealth()*/);
+		enemyHP = new JTextField("Enemy: " /*+ app.getEnemyHealth()*/);
 		
 		playerLabel = new JLabel("Player", playerSprite, JLabel.CENTER);
 		enemyLabel = new JLabel("Enemy", enemySprite, JLabel.CENTER);
@@ -112,11 +112,7 @@ public class GamePanel extends JPanel
 		panelLayout.putConstraint(SpringLayout.EAST, playerLabel, 11, SpringLayout.WEST, defendButton);
 	}
 	
-	public void updateHP()
-	{
-		playerHP.setText(String.valueOf(playerHPValue));
-		enemyHP.setText(String.valueOf(enemyHPValue));
-	}
+	
 	
 	private void setupListeners()
 	{
@@ -144,6 +140,12 @@ public class GamePanel extends JPanel
 				
 			}
 		});
+	}
+	
+	public void updateHP()
+	{
+		playerHP.setText(String.valueOf(playerHPValue));
+		enemyHP.setText(String.valueOf(enemyHPValue));
 	}
 	
 	public void loadSprites(int playerNum, int enemyNum)

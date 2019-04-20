@@ -36,6 +36,15 @@ public class FinalController
 		}*/
 	}
 	
+	public int [] getCharacterHP(int index)
+	{
+		int [] hpData = new int[2];
+		
+		hpData[0] = player.getHealth();
+		hpData[1] = enemy.getHealth();
+		return hpData;
+	}
+	
 	public void play()
 	{
 		appFrame.replaceScreen("GAME");
