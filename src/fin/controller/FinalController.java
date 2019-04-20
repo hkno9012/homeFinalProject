@@ -1,6 +1,5 @@
 package fin.controller;
 
-import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
 import fin.model.*;
@@ -48,11 +47,11 @@ public class FinalController
 	
 	public void start()
 	{
-		/*if(appPanel.getPlayerHPValue() < 1)
+		/*if(player.getHealth() < 1)
 		{
 			appPanel.changeLoseLabel();
 		}
-		if(appPanel.getEnemyHPValue() < 1)
+		if(enemy.getHealth() < 1)
 		{
 			appPanel.changeWinLabel();
 		}*/

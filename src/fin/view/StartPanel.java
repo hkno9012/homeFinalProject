@@ -1,13 +1,11 @@
 package fin.view;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import javax.swing.JLabel;
 import javax.swing.SpringLayout;
 
 import fin.controller.FinalController;
@@ -15,7 +13,6 @@ import fin.controller.FinalController;
 public class StartPanel extends JPanel
 {
 	private FinalController app;
-	private GamePanel otherPanel;
 	private SpringLayout appLayout;
 	
 	private JButton startButton;

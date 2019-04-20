@@ -2,17 +2,16 @@ package fin.view;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Line2D;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 import fin.controller.FinalController;
-import fin.model.*;
 
 public class GamePanel extends JPanel
 {
+	private int attackCount = 0;
+	
 	private SpringLayout panelLayout;
 	private FinalController app;
 	private JButton attackButton;
@@ -49,11 +48,7 @@ public class GamePanel extends JPanel
 		playerLabel = new JLabel("Player", playerSprite, JLabel.CENTER);
 		enemyLabel = new JLabel("Enemy", enemySprite, JLabel.CENTER);
 		winLabel = new JLabel("You Won");
-		panelLayout.putConstraint(SpringLayout.SOUTH, winLabel, -28, SpringLayout.NORTH, playerLabel);
-		panelLayout.putConstraint(SpringLayout.EAST, winLabel, 0, SpringLayout.EAST, playerHP);
 		loseLabel = new JLabel("You Lost");
-		panelLayout.putConstraint(SpringLayout.NORTH, loseLabel, 0, SpringLayout.NORTH, winLabel);
-		panelLayout.putConstraint(SpringLayout.WEST, loseLabel, 0, SpringLayout.WEST, enemyHP);
 		
 		attackButton = new JButton("Attack");
 		defendButton = new JButton("Defend");
@@ -110,6 +105,10 @@ public class GamePanel extends JPanel
 		panelLayout.putConstraint(SpringLayout.WEST, enemyLabel, 203, SpringLayout.EAST, playerLabel);
 		panelLayout.putConstraint(SpringLayout.NORTH, playerLabel, 90, SpringLayout.SOUTH, attackButton);
 		panelLayout.putConstraint(SpringLayout.EAST, playerLabel, 11, SpringLayout.WEST, defendButton);
+		panelLayout.putConstraint(SpringLayout.SOUTH, winLabel, -28, SpringLayout.NORTH, playerLabel);
+		panelLayout.putConstraint(SpringLayout.EAST, winLabel, 0, SpringLayout.EAST, playerHP);
+		panelLayout.putConstraint(SpringLayout.NORTH, loseLabel, 0, SpringLayout.NORTH, winLabel);
+		panelLayout.putConstraint(SpringLayout.WEST, loseLabel, 0, SpringLayout.WEST, enemyHP);
 	}
 	
 	
@@ -124,6 +123,11 @@ public class GamePanel extends JPanel
 				updateHPFields(1);
 				app.enemyFight();
 				updateHPFields(0);
+				attackCount += 1;
+				if(attackCount > 3)
+				{
+					winLabel.setVisible(true);
+				}
 			}
 		});
 		
