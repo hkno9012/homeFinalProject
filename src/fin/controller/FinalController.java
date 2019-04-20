@@ -24,6 +24,12 @@ public class FinalController
 	
 	private void addCharacters()
 	{
+		/*Player characters*/
+		characterList.add(new Warrior());
+		characterList.add(new Wizard());
+		characterList.add(new Thief());
+		characterList.add(new Archer());
+		/*Enemy characters*/
 		characterList.add(new Warrior());
 		characterList.add(new Wizard());
 		characterList.add(new Thief());
@@ -56,8 +62,8 @@ public class FinalController
 	{
 		String [] hpData = new String[2];
 		
-		hpData[0] = player.getHealth();
-		hpData[1] = enemy.getHealth();
+		hpData[0] = player.getHealth() + "";
+		hpData[1] = enemy.getHealth() + "";
 		return hpData;
 	}
 	

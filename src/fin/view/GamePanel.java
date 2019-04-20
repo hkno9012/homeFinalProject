@@ -122,6 +122,7 @@ public class GamePanel extends JPanel
 			{
 				app.playerFight();
 				app.enemyFight();
+				updateHPFields();
 			}
 		});
 		
@@ -142,11 +143,18 @@ public class GamePanel extends JPanel
 		});
 	}
 	
-	public void updateHP(int index)
+	private void sendHPDataToController()
 	{
-		int [] hpData = app.getCharacterHP(index);
-		playerHP.setText(String.valueOf(playerHPValue));
-		enemyHP.setText(String.valueOf(enemyHPValue));
+		String [] hpData = new String[2];
+		hpData[0] = playerHP.getText();
+		hpData[1] = enemyHP.getText();
+	}
+	
+	public void updateHPFields(int index)
+	{
+		String [] hpData = app.getCharacterHP(index);
+		playerHP.setText(hpData[0]);
+		enemyHP.setText(hpData[1]);
 	}
 	
 	public void loadSprites(int playerNum, int enemyNum)
