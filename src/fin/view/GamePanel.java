@@ -142,8 +142,9 @@ public class GamePanel extends JPanel
 		});
 	}
 	
-	public void updateHP()
+	public void updateHP(int index)
 	{
+		int [] hpData = app.getCharacterHP(index);
 		playerHP.setText(String.valueOf(playerHPValue));
 		enemyHP.setText(String.valueOf(enemyHPValue));
 	}

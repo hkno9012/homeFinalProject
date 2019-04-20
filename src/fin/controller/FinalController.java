@@ -1,6 +1,7 @@
 package fin.controller;
 
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
 import fin.model.*;
 import fin.model.Character;
@@ -10,6 +11,7 @@ public class FinalController
 {
 	private FinalFrame appFrame;
 	private GamePanel appPanel;
+	private ArrayList<Character> characterList;
 	
 	private Character player;
 	private Character enemy;
@@ -17,6 +19,20 @@ public class FinalController
 	public FinalController()
 	{
 		appFrame = new FinalFrame(this);
+		characterList = new ArrayList<Character>();
+	}
+	
+	private void addCharacters()
+	{
+		characterList.add(new Warrior());
+		characterList.add(new Wizard());
+		characterList.add(new Thief());
+		characterList.add(new Archer());
+	}
+	
+	public ArrayList<Character> getCharacterList()
+	{
+		return characterList;
 	}
 	
 	public FinalFrame getFrame()
@@ -36,9 +52,9 @@ public class FinalController
 		}*/
 	}
 	
-	public int [] getCharacterHP(int index)
+	public String [] getCharacterHP(int index)
 	{
-		int [] hpData = new int[2];
+		String [] hpData = new String[2];
 		
 		hpData[0] = player.getHealth();
 		hpData[1] = enemy.getHealth();
