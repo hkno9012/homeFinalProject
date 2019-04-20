@@ -121,8 +121,9 @@ public class GamePanel extends JPanel
 			public void actionPerformed(ActionEvent mouseClick)
 			{
 				app.playerFight();
+				updateHPFields(1);
 				app.enemyFight();
-				updateHPFields();
+				updateHPFields(0);
 			}
 		});
 		

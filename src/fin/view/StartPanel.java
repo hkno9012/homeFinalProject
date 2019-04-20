@@ -149,6 +149,7 @@ public class StartPanel extends JPanel
 			{
 				app.makeCharacter(1);
 				app.play();
+				//otherPanel.updateHPFields();
 			}
 		});
 		
